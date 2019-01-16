@@ -78,7 +78,7 @@
             <input type="file" id="exampleInputFile" @change='add_img($event)' accept="image/gif,image/jpeg,image/jpg,image/png">
             <img v-if="releaseForm.photo_src !==''" :src="'./static/img/bookImg/'+releaseForm.photo_src" style="height:190px;width:140px" />
           </div>
-          <button @click="releaseBook"  col-md-12 class="btn btn-info" style="width:200px">马上发布</button>
+          <button type="button"  @click="releaseBook"  col-md-12 class="btn btn-info" style="width:200px">马上发布</button>
         </form>
       </div>
     </div>
@@ -137,11 +137,13 @@ export default {
           })
           .then(response => {
             console.log(response)
-            if (confirm(response.body.msg)) {
-              this.$router.push('/myinfo')
-            } else {
-              this.$router.push('/myinfo')
-            }
+            alert('插入成功')
+            this.$router.push('/myinfo')
+            // if (confirm(response.body.msg)) {
+            //   this.$router.push('/myinfo')
+            // } else {
+            //   this.$router.push('/myinfo')
+            // }
           })
       }
     },
@@ -170,7 +172,7 @@ export default {
       .post(PSApi.getAllCategory)
       .then(result => {
         this.categoryList = result.body
-        console.log(this.categoryList)
+        // console.log(this.categoryList)
       })
   }
 }

@@ -31,7 +31,7 @@
             <div class="col-md-4">
                 <div class="btn-group" role="group" style="margin-left: 180px;margin-top: 10px;">
                     <!--  -->
-                    <router-link :to="{path:'/releaseBook', query:{categoryList:categoryList}}" v-if="!isLogout">
+                    <router-link to='/releaseBook' v-if="!isLogout">
                         <button type="button" class="btn btn-default" >我要发布</button>
                     </router-link>
                     <router-link to='/myinfo' v-if="!isLogout">
@@ -92,7 +92,7 @@ export default {
       .post(PSApi.getAllCategory)
       .then(result => {
         this.categoryList = result.body
-        console.log(this.categoryList)
+        // console.log(this.categoryList)
       })
   },
   methods: {

@@ -95,12 +95,13 @@ export default {
   },
   created () {
     this.pageNum = 1
-    console.log('接收到的参数为' + this.$route.query.categoryId)
+    // console.log('接收到的参数为' + this.$route.query.categoryId)
     this.categoryId = this.$route.query.categoryId
     this.getClassifiedBooks(0)
   },
   watch: {
     '$route' (to, from) {
+      this.pageNum = 1
       // console.log('qwe' + this.$route.query.categoryId)
       this.categoryId = this.$route.query.categoryId
       this.getClassifiedBooks(0)

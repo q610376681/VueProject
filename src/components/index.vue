@@ -170,7 +170,7 @@ export default {
         .post(PSApi.getLatestBooks)
         .then(result => {
           this.latestBooks = result.body.data
-          console.log(this.latestBooks)
+          // console.log(this.latestBooks)
         })
     },
     getRecommendBooks () {
@@ -185,9 +185,9 @@ export default {
       this.$http
         .post(PSApi.getRecommendBooks, {user_id: this.user_id})
         .then(result => {
-          console.log(result.body)
+          // console.log(result.body)
           this.recmmondBooks = result.body
-          console.log(this.recmmondBooks)
+          // console.log(this.recmmondBooks)
         })
     },
     getBook (bookId) {

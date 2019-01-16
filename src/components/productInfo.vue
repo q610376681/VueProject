@@ -89,12 +89,13 @@ export default {
     }
   },
   created () {
-    console.log('接收到的参数为' + this.$route.query.bookId)
+    // console.log('接收到的参数为' + this.$route.query.bookId)
     this.bookId = this.$route.query.bookId
     this.$http
       .post(PSApi.getBook, {book_id: this.bookId})
       .then(result => {
         this.book = result.body
+        console.log(this.book)
       })
   }
 }
